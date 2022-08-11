@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/svg+xml" href="./img/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordoba Gastronomica</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap"rel="stylesheet"/>
+    <link rel="stylesheet" href="./css/estilo.css">
+    
+</head>
+<body>
+    <header>
+        <div class="header-section container">
+            <img class="logo" src="./hecho_en_cordoba.png" alt=""> 
+            <div>
+                <img onmouseover="showCart(this)" class="cart" src="./cart.png" alt="">
+                <p class="count-product">0</p>
+            </div>
+            <div class="cart-products" id="products-id">
+                <p class="close-btn" onclick="closeBtn()">X</p>
+                <h3>Pizzas</h3>
+                <div class="card-items">
+
+                </div>
+                <h2>Total: <strong class="price-total">0</strong> $</h2>
+            </div>
+        </div>
+    </header>
+    <section class="container">
+        <div class="products">
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>1750</span>$</p>
+                </div>
+                <p class="title">Pizza Putanesca</p>
+                <a href="" data-id="1" class="btn-add-cart">Agregar al carrito</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>1500</span>$</p>
+                </div>
+                <p class="title">Pizza Jamon y Queso</p>
+                <a href="" class="btn-add-cart" data-id="2">Agregar al carrito</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>1550</span>$</p>
+                </div>
+                <p class="title">Pizza Especial</p>
+                <a href="" data-id="3" class="btn-add-cart">Agregar al carrito</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>2000</span>$</p>
+                </div>
+                <p class="title">Pizza 4 Quesos</p>
+                <a href="" data-id="4" class="btn-add-cart">Agregar al carrito</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>1900</span>$</p>
+                </div>
+                <p class="title">Pizza con Hongos</p>
+                <a href="" data-id="5" class="btn-add-cart">Agregar al carrito</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>1200</span>$</p>
+                </div>
+                <p class="title">Pizza Vegana</p>
+                <a href="" data-id="6" class="btn-add-cart">Agregar al carrito</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>1350</span>$</p>
+                </div>
+                <p class="title">Pizza Margarita</p>
+                <a href="" data-id="7" class="btn-add-cart">Agregar al carrito</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="./Imagenes queComer/Pizzas/Pizza.jpg" alt="">
+                    <p><span>1750</span>$</p>
+                </div>
+                <p class="title">Pizza Napolitana</p>
+                <a href="" data-id="8" class="btn-add-cart">Agregar al carrito</a>
+            </div>
+            </div>
+        </div>
+      </section>
+
+    <script>
+        function showCart(x){
+            document.getElementById("products-id").style.display = "block";
+        }
+        function closeBtn(){
+              document.getElementById("products-id").style.display = "none";
+        }
+
+    </script>
+    <script src="./js/tienda.js" ></script>
+</body>
+</html>
