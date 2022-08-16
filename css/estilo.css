@@ -5,16 +5,18 @@ body{
 }
 header{
     background-color: #e4e4e8;
-    padding-top: 18px;
     padding-bottom: 18px;
     box-shadow: 0 7px 8px -3px grey;
-    position: fixed;
     width: 100%;
-    margin-top: -10px;
+    height: 110px;
     z-index: 99;
+    margin-left: 10px;
+    padding: 10px;
+    position: relative;
 }
+
 .container{
-    max-width: 1200px;
+    max-width: 90%;
     text-align: center;
     margin: auto;
 }
@@ -37,13 +39,37 @@ header{
     border-radius: 50%;
     color: red;
     font-weight: 700;
-    font-family: system-ui;
     line-height: 18px;
 }
 .logo{
     width: 164px;
     height: 84px;
     cursor: pointer;
+}
+.comidaTipo{
+    float: left;
+    background-color: red;
+    font-size: 1.5rem;
+    width: 20%;
+    height: 600px;
+    margin-left: 10px;
+    padding: 10px;
+    margin-top: 10px;
+}
+.comidaTipo li{
+    list-style:none;
+    
+}
+.comidaTipo a{
+    text-decoration: none;
+    font-weight: 600;
+    line-height: 90px;
+    color: white;
+    
+}
+.comidaTipo a:hover{
+    color: blue;
+    
 }
 
 .cart{
@@ -55,10 +81,9 @@ header{
     top: 82px;
     right: -18px;
     background-color: #fff;
-    padding: 0 18px;
+    padding: 10px 10px;
     box-shadow: 0 3px 10px rgb(0 0 0 / 20%);
     display: none;
-
     min-width: 290px;
 }
 
@@ -66,12 +91,13 @@ header{
     margin-bottom: 16px;
     transition-duration: .5s;
 }
-/*end header*/
+
 .products{
-    padding-top: 170px;
+    padding-top: 10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-left: 5%;
 }
 
 .carts{
@@ -84,8 +110,7 @@ header{
     width: 100%;
 }
 .carts p{
-    font-family: system-ui;
-    font-weight: 500;
+    font-weight: 800;
     padding: 0 20px;
     margin-bottom: 24px;
 }

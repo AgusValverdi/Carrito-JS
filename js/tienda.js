@@ -38,6 +38,7 @@ function deleteProduct(e) {
         buyThings = buyThings.filter(product => product.id !== deleteId);
         
         countProduct--;
+        localStorage.setItem('carrito', JSON.stringify(buyThings))
     }
     
     if (buyThings.length === 0) {
@@ -74,6 +75,7 @@ function readTheContent(product){
         buyThings = [...buyThings, infoProduct]
         countProduct++;
     }
+    addLocalStorage()
     loadHtml();
     
 }
@@ -101,6 +103,22 @@ function loadHtml(){
         amountProduct.innerHTML = countProduct;
     });
 }
- function clearHtml(){
-    containerBuyCart.innerHTML = '';
- }
+    function clearHtml() {
+        containerBuyCart.innerHTML = '';
+    }
+
+
+    //
+    function addLocalStorage() {
+        localStorage.setItem('carrito', JSON.stringify(buyThings))
+    }
+
+    window.onload = function () {
+        const storage = JSON.parse(localStorage.getItem('carrito'));
+        if (storage) {
+            countProduct = JSON.parse(localStorage.getItem('carrito')).length;
+            buyThings = storage;
+            amountProduct.textContent = buyThings.length
+            loadHtml()
+        }
+}
