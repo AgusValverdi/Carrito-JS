@@ -25,6 +25,13 @@ function addProduct(e){
 }
 
 function deleteProduct(e) {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Producto eliminado con exito',
+        showConfirmButton: false,
+        timer: 1500
+        })
     if (e.target.classList.contains('delete-product')) {
         const deleteId = e.target.getAttribute('data-id');
 
