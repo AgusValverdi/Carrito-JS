@@ -1,7 +1,10 @@
+let amountProduct = document.querySelector('.count-product');
+document.addEventListener('DOMContentLoaded', () => {
+
+
 let allContainerCart = document.querySelector('.products');
 let containerBuyCart = document.querySelector('.card-items');
 let priceTotal = document.querySelector('.price-total')
-let amountProduct = document.querySelector('.count-product');
 
 
 let buyThings = [];
@@ -10,19 +13,21 @@ let countProduct = 0;
 
 //functions
 loadEventListenrs();
-function loadEventListenrs(){
+function loadEventListenrs() {
     allContainerCart.addEventListener('click', addProduct);
 
     containerBuyCart.addEventListener('click', deleteProduct);
+
 }
 
-function addProduct(e){
+function addProduct(e) {
     e.preventDefault();
     if (e.target.classList.contains('btn-add-cart')) {
-        const selectProduct = e.target.parentElement; 
+        const selectProduct = e.target.parentElement;
         readTheContent(selectProduct);
     }
 }
+
 
 function deleteProduct(e) {
     Swal.fire({
@@ -31,23 +36,23 @@ function deleteProduct(e) {
         title: 'Producto eliminado con exito',
         showConfirmButton: false,
         timer: 1500
-        })
+    })
     if (e.target.classList.contains('delete-product')) {
         const deleteId = e.target.getAttribute('data-id');
 
         buyThings.forEach(value => {
             if (value.id == deleteId) {
                 let priceReduce = parseFloat(value.price) * parseFloat(value.amount);
-                totalCard =  totalCard - priceReduce;
+                totalCard = totalCard - priceReduce;
                 totalCard = totalCard.toFixed(2);
             }
         });
         buyThings = buyThings.filter(product => product.id !== deleteId);
-        
+
         countProduct--;
         localStorage.setItem('carrito', JSON.stringify(buyThings))
     }
-    
+
     if (buyThings.length === 0) {
         priceTotal.innerHTML = 0;
         amountProduct.innerHTML = 0;
@@ -55,7 +60,7 @@ function deleteProduct(e) {
     loadHtml();
 }
 
-function readTheContent(product){
+function readTheContent(product) {
     const infoProduct = {
         image: product.querySelector('div img').src,
         title: product.querySelector('.title').textContent,
@@ -84,13 +89,13 @@ function readTheContent(product){
     }
     addLocalStorage()
     loadHtml();
-    
+
 }
 
-function loadHtml(){
+function loadHtml() {
     clearHtml();
     buyThings.forEach(product => {
-        const {image, title, price, amount, id} = product;
+        const { image, title, price, amount, id } = product;
         const row = document.createElement('div');
         row.classList.add('item');
         row.innerHTML = `
@@ -110,22 +115,23 @@ function loadHtml(){
         amountProduct.innerHTML = countProduct;
     });
 }
-    function clearHtml() {
-        containerBuyCart.innerHTML = '';
-    }
-
-
-    //
-    function addLocalStorage() {
-        localStorage.setItem('carrito', JSON.stringify(buyThings))
-    }
-
-    window.onload = function () {
-        const storage = JSON.parse(localStorage.getItem('carrito'));
-        if (storage) {
-            countProduct = JSON.parse(localStorage.getItem('carrito')).length;
-            buyThings = storage;
-            amountProduct.textContent = buyThings.length
-            loadHtml()
-        }
+function clearHtml() {
+    containerBuyCart.innerHTML = '';
 }
+
+
+
+function addLocalStorage() {
+    localStorage.setItem('carrito', JSON.stringify(buyThings))
+}
+
+window.onload = function () {
+    const storage = JSON.parse(localStorage.getItem('carrito'));
+    if (storage) {
+        countProduct = JSON.parse(localStorage.getItem('carrito')).length;
+        buyThings = storage;
+        amountProduct.textContent = buyThings.length
+        loadHtml()
+        }
+    }
+});
