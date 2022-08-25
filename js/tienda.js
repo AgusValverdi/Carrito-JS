@@ -135,3 +135,13 @@ window.onload = function () {
         }
     }
 });
+
+function render(lista) {
+    for(const pizza of lista){
+        console.log(`Comentario: ${pizza.body}`) // Comentario de las pizzas mostrado unicamente en consola ya que no me sirve para mi proyecto
+    }
+}
+
+fetch ('https://jsonplaceholder.typicode.com/comments')
+    .then((response) => response.json())
+    .then((data) => render(data))
