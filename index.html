@@ -33,16 +33,21 @@
             </div>
         </div>
     </header>
-    <aside class="comidaTipo">
-        <ul>
-            <li><a href="#">Pizzas</a></li>
-            <li><a href="#">Carnes</a></li>
-            <li><a href="#">Pastas</a></li>
-            <li><a href="#">Mariscos</a></li>
-            <li><a href="#">Bar</a></li>
-            <li><a href="#">Cafeteria</a></li>
-        </ul>
-    </aside>
+    <div id="sideNavigation" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="./index.html">Pizzas</a>
+        <a href="#">Carnes</a>
+        <a href="#">Pastas</a>
+    </div>
+    <nav class="topnav">
+        <a href="#" onclick="openNav()">
+            <svg width="30" height="30" id="icoOpen">
+                <path d="M0,5 30,5" stroke="#000" stroke-width="5"/>
+                <path d="M0,14 30,14" stroke="#000" stroke-width="5"/>
+                <path d="M0,23 30,23" stroke="#000" stroke-width="5"/>
+            </svg>
+        </a>
+    </nav>
     <section class="container">
         <div class="products">
             <div class="carts">
@@ -111,8 +116,8 @@
             </div>
             </div>
         </div>
-      </section>
-
+    </section>
+    
     <script>
         function showCart(x){
             document.getElementById("products-id").style.display = "block";

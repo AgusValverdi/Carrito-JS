@@ -145,3 +145,14 @@ function render(lista) {
 fetch ('https://jsonplaceholder.typicode.com/comments')
     .then((response) => response.json())
     .then((data) => render(data))
+
+
+
+    function openNav() {
+        document.getElementById("sideNavigation").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+    }
+    function closeNav() {
+        document.getElementById("sideNavigation").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+    }

@@ -140,11 +140,11 @@ header{
 .carts a:hover{
     background: #fff;
     color: red;
-    border: solid 2px red;
+    border: solid 2px rgb(0, 0, 0);
     transition-duration: .3s;
 }
 
-/*float cart*/
+
 .cart-products .item img{
     width: 115px;
 }
@@ -184,3 +184,79 @@ header{
 .cart-products .item .item-content h5.cart-price{
     font-weight: 700;
 }
+
+.sidenav {
+    height: 100%; 
+    width: 0; 
+    position:fixed;
+    z-index: 1; 
+    top: 10;
+    left: 0;
+    background-color: #e4e4e8; 
+    overflow-x: hidden; 
+    padding-top: 60px; 
+    transition: 0.5s;
+}
+
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: red;
+    display: block;
+    transition: 0.3s
+
+}
+
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: black;
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    overflow:hidden;
+    width:100%;
+}
+
+.topnav {
+    background-color: rgb(255, 0, 0);
+    overflow: hidden;
+}
+
+
+.topnav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black
+}
+
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
